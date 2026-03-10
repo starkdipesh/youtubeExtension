@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Channel Restrictor Settings</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎬 YouTube Channel Restrictor</h1>
+            <p class="subtitle">Restrict YouTube to a specific channel</p>
+        </div>
+
+        <div class="content">
+        <div class="form-group">
+            <label for="channelInput">YouTube Channel</label>
+            <div class="input-group">
+                <select id="inputType">
+                    <option value="handle">@Handle (Recommended)</option>
+                    <option value="id">Channel ID</option>
+                </select>
+                <input 
+                    type="text" 
+                    id="channelInput" 
+                    placeholder="e.g., @tech-gamerz7292"
+                    autocomplete="off"
+                >
+            </div>
+            <p class="help-text" id="helpText">
+                Use the @handle from your channel URL (e.g., https://www.youtube.com/@tech-gamerz7292)
+            </p>
+        </div>
+
+            <div class="form-group">
+                <label for="channelName">Channel Name (Display)</label>
+                <input 
+                    type="text" 
+                    id="channelName" 
+                    placeholder="e.g., My Favorite Channel"
+                    autocomplete="off"
+                >
+                <p class="help-text">
+                    This name will show in notifications and overlays
+                </p>
+            </div>
+
+            <div class="button-group">
+                <button id="saveBtn" class="btn btn-primary">💾 Save Settings</button>
+                <button id="testBtn" class="btn btn-secondary">🧪 Test (Open Channel)</button>
+                <button id="clearBtn" class="btn btn-danger">🗑️ Clear Settings</button>
+            </div>
+
+            <div id="status" class="status-message"></div>
+
+            <div class="info-box">
+                <h3>✨ Features</h3>
+                <ul>
+                    <li>✅ Use @handle or Channel ID to filter</li>
+                    <li>✅ Auto-plays next video from allowed channel</li>
+                    <li>✅ Scans 'Up Next' sidebar for matching videos</li>
+                    <li>✅ Auto-plays latest video if none in sidebar</li>
+                    <li>✅ Works with YouTube's dynamic page loads (SPA)</li>
+                    <li>✅ Clean, non-intrusive UI with status overlays</li>
+                </ul>
+            </div>
+
+            <div class="info-box warning">
+                <h3>⚠️ Important Notes</h3>
+                <ul>
+                    <li>Videos from other channels will be blocked</li>
+                    <li>Recommendations are filtered to the allowed channel only</li>
+                    <li>This extension works on YouTube.com only</li>
+                    <li>Reload any open YouTube tabs after changing settings</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Version 1.0.0 | Made with ❤️ for YouTube enthusiasts</p>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

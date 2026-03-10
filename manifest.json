@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Channel Restrictor",
+  "version": "1.0.0",
+  "description": "Restrict YouTube to a specific channel with auto-play next video functionality",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "webRequest"
+  ],
+  "host_permissions": [
+    "https://www.youtube.com/*",
+    "https://youtu.be/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "YouTube Channel Restrictor"
+  }
+}
